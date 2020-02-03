@@ -1,5 +1,9 @@
 # Visual Studio Code # 
+<<<<<<< HEAD
 .vscode
+=======
+.vscode 
+>>>>>>> fbcd12d746f1e1718754f9358993fd29855946e2
 !.vscode/settings.json 
 !.vscode/tasks.json 
 !.vscode/launch.json 
