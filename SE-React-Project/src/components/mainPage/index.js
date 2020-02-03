@@ -10,13 +10,12 @@ import ProductList from '../basic/productList'
 
 class MainPage extends React.Component{
     state = {
-        products: {},
-        sellers: {},
+        products: null,
+        sellers: null,
     }
     componentDidMount(){
         fetch('http://localhost:8000/market/')
         .then(res => res.json()).then(json => {
-            console.log(json);
             this.setState({products: json});
         });
         fetch('http://localhost:8000/custom_user/sellers')
