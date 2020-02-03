@@ -1,0 +1,15 @@
+.main-page__cover-image {
+    height: 400px;
+    overflow: hidden;
+    width: 100%;       
+    -webkit-transition: max-width .5s ease-out;  /* Saf3.2+, Chrome */
+    -moz-transition: max-width .5s ease-out;  /* FF4+ */
+    -ms-transition: max-width .5s ease-out;  /* IE10? */
+    -o-transition: max-width .5s ease-out;  /* Opera 10.5+ */
+    transition: max-width .5s ease-out;
+}
+
+.carousel-img {
+    position: relative;
+    top: -150px;
+}

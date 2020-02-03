@@ -1,0 +1,14 @@
+.navbar{
+    box-shadow: 0px 2px 2px #888888;
+}
+.navbar__item{
+    padding: 0 0.5rem;
+    cursor: pointer;
+}
+
+@media (min-width: 992px) { 
+    .underline_item {
+        border-bottom: 3px solid whitesmoke;
+        color: whitesmoke;
+    }
+ }
