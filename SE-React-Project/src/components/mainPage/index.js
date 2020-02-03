@@ -19,6 +19,10 @@ class MainPage extends React.Component{
             console.log(json);
             this.setState({products: json});
         });
+        fetch('http://localhost:8000/custom_user/sellers')
+        .then(res => res.json()).then(json => {
+            this.setState({sellers: json});
+        });
     }
     render(){
         console.log(this.state.products)
@@ -47,7 +51,7 @@ class MainPage extends React.Component{
                 </a>
             </div>
 
-            <ProductList content={this.props.products ? this.props.products : null} label="توزیع‌کنندگان برتر"/>
+            {/* <ProductList content={this.state.sellers} label="توزیع‌کنندگان برتر"/> */}
             <ProductList content={this.state.products} label="محصولات برتر"/>
             <ProductList content={this.state.products} label="محصولات تازه"/>
         </div>)

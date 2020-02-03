@@ -15,7 +15,7 @@ const ProductItem = (props) => {
                 <h6 className="card-title">{props.name}</h6>
                 <p className="card-text">
                     <p>{props.price} تومان</p>
-                    <p><small className="text-secondary">خرید از:</small> {props.seller}</p>
+                    <p><small className="text-secondary">خرید از:</small> {props.seller.user.username}</p>
                 </p>
                 <a href="#" className="btn btn-primary product-item__add-product rounded-circle btn btn-success" onClick={() => props.addToCart(props.productId, 1)}><FaPlus /></a>
             </div>
