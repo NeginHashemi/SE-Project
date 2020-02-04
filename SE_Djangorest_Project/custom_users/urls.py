@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import SellerCreateView, SellerDetailView, SellerListView, CustomerCreateView, CustomerDetailView, CustomerListView
+from .views import *
 
 urlpatterns = [
     # path('create_user', UserListView.as_view())
@@ -9,4 +9,7 @@ urlpatterns = [
     path('customers', CustomerListView.as_view()),
     path('customer/<pk>', CustomerDetailView.as_view()),
     path('create_customer', CustomerCreateView.as_view()),
+    path("auth/register", RegistrationAPI.as_view()),
+    path("auth/login", LoginAPI.as_view()),
+    path("auth/user", UserAPI.as_view()),
 ]
