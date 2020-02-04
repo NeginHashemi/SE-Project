@@ -17,7 +17,6 @@ class SignIn extends React.Component{
         password: "",
     }
     onSubmit = e => {
-        console.log(this.props)
         this.props.login(this.state.username, this.state.password);
     }
     changeUsername = e => this.setState({username: e.target.value})

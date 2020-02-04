@@ -19,7 +19,7 @@ class cartItem extends React.Component {
             <div class="card mb-3 w-100">
                 <div class="card-body row text-center">
                     <div className="cart-item__name col-md-2">{this.props.product.name}</div>
-                    <div className="cart-item__seller col-md-2"> <small className="text-secondary">خرید از: </small> {this.props.product.seller}</div>
+                    <div className="cart-item__seller col-md-2"> <small className="text-secondary">خرید از: </small> {this.props.product.seller.user.username}</div>
                     <div className="cart-item__price col-md-2 mr-auto">{this.props.amount * this.props.product.price} تومان</div>
                     <div className="col-md-2 d-flex justify-content-around">
                         <div className="cart-item__add-amount cart-item__change-quantity" onClick={() => this.changeQuantity(1)}>

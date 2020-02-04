@@ -7,21 +7,15 @@ import './index.scss'
 import Product from '../basic/product'
 
 class Products extends React.Component{
-    state = {
-        products: null,
-    }
     componentDidMount(){
-        fetch('http://localhost:8000/market/')
-        .then(res => res.json()).then(json => {
-            this.setState({products: json});
-        });
+        this.props.fetchProducts()
     }
     render(){
         return(
             <div className="products__container row m-3 p-3">
-                {this.state.products ? Object.values(this.state.products).map((element, index) => {
+                {this.props.products ? Object.values(this.props.products).map((element, index) => {
                     return(
-                        <Product key={index} name={element.name} price={element.price} seller={element.seller.user.username} productId={element.id}/>
+                        <Product key={index} name={element.name} price={element.price} seller={element.seller} productId={element.id}/>
                     )
                 }) : null}
             </div>

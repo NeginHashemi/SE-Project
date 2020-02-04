@@ -9,22 +9,10 @@ import './index.scss'
 import ProductList from '../basic/productList'
 
 class MainPage extends React.Component{
-    state = {
-        products: null,
-        sellers: null,
-    }
     componentDidMount(){
-        fetch('http://localhost:8000/market/')
-        .then(res => res.json()).then(json => {
-            this.setState({products: json});
-        });
-        fetch('http://localhost:8000/custom_user/sellers')
-        .then(res => res.json()).then(json => {
-            this.setState({sellers: json});
-        });
+        this.props.fetchProducts()
     }
     render(){
-        console.log(this.state.products)
         return(<div className="main-page__container">
             {/* <div className="main-page__cover-image">Cover image goes here</div> */}
 
@@ -50,14 +38,15 @@ class MainPage extends React.Component{
                 </a>
             </div>
 
-            {/* <ProductList content={this.state.sellers} label="توزیع‌کنندگان برتر"/> */}
-            <ProductList content={this.state.products} label="محصولات برتر"/>
-            <ProductList content={this.state.products} label="محصولات تازه"/>
+            {/* <ProductList content={this.props.products ? this.props.products : null} label="توزیع‌کنندگان برتر"/> */}
+            <ProductList content={this.props.products ? this.props.products : null} label="محصولات برتر"/>
+            <ProductList content={this.props.products ? this.props.products : null} label="محصولات تازه"/>
         </div>)
     }
 }
 
 const mapStateToProps = (state) => {
+    console.log(state)
     return({products: state.products})
 }
 

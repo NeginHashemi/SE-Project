@@ -3,8 +3,9 @@ import * as auth from "./auth";
 import server from '../apis/server'
 
 export const fetchProducts = () => async dispatch => {
-    const response = await server.get('/products/')
-    dispatch({ type: FETCH_PRODUCTS, payload: response.data })
+    const response = await fetch('http://localhost:8000/market/')
+    const data = await response.json()
+    dispatch({ type: FETCH_PRODUCTS, payload: data })
 }
 
 export const fetchProduct = (id) => async dispatch => {
