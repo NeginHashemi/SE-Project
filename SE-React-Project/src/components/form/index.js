@@ -35,6 +35,7 @@ class Form extends React.Component{
                             key={index}
                             content={element.content}
                             type={element.type}
+                            onChange={element.onChange}
                             />
                         )
                     })}

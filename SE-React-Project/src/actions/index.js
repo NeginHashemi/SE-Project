@@ -1,5 +1,5 @@
 import { FETCH_PRODUCTS, FETCH_PRODUCT, ADD_TO_CART, FETCH_CART, UPDATE_CART, DELETE_CART_ITEM, ADD_PRODUCT } from "./types"
-
+import * as auth from "./auth";
 import server from '../apis/server'
 
 export const fetchProducts = () => async dispatch => {
@@ -44,3 +44,5 @@ export const addProduct = (product) => async dispatch => {
         alert('خطایی رخ داد')
     }
 }
+
+export {auth}

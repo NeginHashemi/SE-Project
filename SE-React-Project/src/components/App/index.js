@@ -1,6 +1,5 @@
 import React from "react"
 import { Router, Route } from "react-router-dom"
-import { connect } from "react-redux"
 
 import "../../scss/normalize.css"
 import "./index.scss"
@@ -27,5 +26,4 @@ const App = () => {
         </Router>
     </div>)
 }
-
-export default App
+export default App;
